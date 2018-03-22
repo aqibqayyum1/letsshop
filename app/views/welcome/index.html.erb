@@ -1,0 +1,21 @@
+<h1 style="text-align: center;">All Products</h1>
+ <p>For user</p>
+ <div class="container">
+<table class="table">
+  <tr>
+    <th>Image</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+ 
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= image_tag product.image.url(:thumb)%></td>
+      <td><%= product.name %></td>
+      <td><%= product.price %></td>
+      <td><%= link_to 'Show', product_path(product) %></td>
+    </tr>
+  <% end %>
+</table>
+</div><!-- end of container-->
